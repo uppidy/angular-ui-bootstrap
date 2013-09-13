@@ -231,6 +231,9 @@ angular.module('ui.bootstrap.collapse',['ui.bootstrap.transition'])
           initialAnimSkip = false;
           var dimension = helpers.dimension();
           helpers[dimension](element, 'auto');
+          element
+            .removeClass('collapse')
+            .removeClass('collapsed');
           events.afterShow(dimension);
         } else {
           doTransition(true, 'scroll');
@@ -242,6 +245,7 @@ angular.module('ui.bootstrap.collapse',['ui.bootstrap.transition'])
           initialAnimSkip = false;
           var dimension = helpers.dimension();
           helpers[dimension](element, 0);
+          element.removeClass('in');
           events.afterHide(dimension);
         } else {
           doTransition(false, '0');
